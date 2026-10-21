@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대한민국 국가보훈부 (Ministry of Patriots and Veterans Affairs)</title>
+  <style>
+    :root {
+      --primary: #003366;       /* 태극 청색 계열 보훈 네이비 */
+      --primary-dark: #002244;
+      --primary-light: #1a569d;
+      --accent: #c41f26;        /* 태극 적색 포인트 */
+      --accent-gold: #d4a017;
+      --accent-teal: #0d9488;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
+      --radius: 14px;
+      --transition: all 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* 상단 네비게이션 헤더 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-logo-mark {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.25rem;
+      box-shadow: 0 3px 8px rgba(0, 51, 102, 0.25);
+    }
+
+    .brand-title h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--primary);
+    }
+
+    .brand-title p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-light);
+      background: #eff6ff;
+    }
+
+    /* 네비게이션 진단 버튼 강조 */
+    .nav-btn-highlight {
+      background: #e0f2fe !important;
+      color: #0369a1 !important;
+      font-weight: 700 !important;
+    }
+
+    /* 히어로 섹션 */
+    .hero {
+      background: linear-gradient(135deg, #021e3f 0%, #003366 50%, #0d447d 100%);
+      color: white;
+      padding: 4.5rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #e2e8f0;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 11px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      border: none;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary:hover {
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .btn-survey {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+    }
+
+    .btn-survey:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1.5px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #ffffff;
+    }
+
+    /* 메인 컨테이너 */
+    main {
+      max-width: 1200px;
+      margin: -2.5rem auto 4rem;
+      padding: 0 1.5rem;
+      position: relative;
+    }
+
+    /* 요약 카드 그리드 (Hero 아래 겹치는 카드) */
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .highlight-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .icon-blue { background: #e0f2fe; color: #0284c7; }
+    .icon-red { background: #fee2e2; color: #dc2626; }
+    .icon-gold { background: #fef3c7; color: #d97706; }
+    .icon-green { background: #dcfce7; color: #16a34a; }
+
+    .highlight-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+    }
+
+    .highlight-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* 공통 섹션 스타일 */
+    .section-block {
+      margin-bottom: 4.5rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .section-header .title-group h2 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-header .title-group p {
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      font-size: 1rem;
+    }
+
+    /* ========================================================
+       ✨ 신규: '나는 어떤 도움을 받을 수 있을까?' 설문/체크리스트
+       ======================================================== */
+    .survey-container {
+      background: white;
+      border: 2px solid #bfdbfe;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 51, 102, 0.08);
+      overflow: hidden;
+    }
+
+    .survey-banner {
+      background: linear-gradient(135deg, #0f3f7a 0%, #1e5ba3 100%);
+      color: white;
+      padding: 2.2rem 2.4rem;
+      position: relative;
+    }
+
+    .survey-banner-tag {
+      display: inline-block;
+      background: #fbbf24;
+      color: #78350f;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+
+    .survey-banner h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .survey-banner p {
+      font-size: 0.98rem;
+      color: #dbeafe;
+      max-width: 720px;
+    }
+
+    .survey-body {
+      padding: 2.2rem;
+    }
+
+    /* 스텝 프로그레스 바 */
+    .step-indicator {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .step-indicator::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: #e2e8f0;
+      z-index: 1;
+    }
+
+    .step-item {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      color: #64748b;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      border: 3px solid white;
+    }
+
+    .step-item.active .step-num {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 0 0 3px #bfdbfe;
+    }
+
+    .step-item.completed .step-num {
+      background: #10b981;
+      color: white;
+    }
+
+    .step-label {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .step-item.active .step-label {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* 질문 카드 스타일 */
+    .question-block {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .question-block.active {
+      display: block;
+    }
+
+    .q-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .q-desc {
+      font-size: 0.92rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+
+    /* 선택 옵션 그리드 */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .option-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .option-card:hover {
+      border-color: #93c5fd;
+      background: #f8fafc;
+      transform: translateY(-2px);
+    }
+
+    .option-card input {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .option-card.selected {
+      border-color: var(--primary-light);
+      background: #eff6ff;
+      box-shadow: 0 2px 8px rgba(0, 51, 102, 0.08);
+    }
+
+    .option-content h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .option-content p {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.45;
+    }
+
+    /* 설문 컨트롤 버튼 */
+    .survey-actions {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 1.5rem;
+      align-items: center;
+    }
+
+    .btn-survey-prev {
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .btn-survey-prev:hover {
+      background: #e2e8f0;
+    }
+
+    .btn-survey-next {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-survey-next:hover {
+      background: var(--primary-light);
+    }
+
+    /* 진단 결과 화면 */
+    .survey-result {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .survey-result.active {
+      display: block;
+    }
+
+    .result-summary-header {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .result-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .result-badge.badge-vet { background: #dcfce7; color: #15803d; }
+    .result-badge.badge-general { background: #e0f2fe; color: #0369a1; }
+
+    .result-summary-header h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #065f46;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-summary-header p {
+      font-size: 0.95rem;
+      color: #374151;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* 추천 혜택 카드 그리드 */
+    .benefit-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .benefit-card .card-top {
+      margin-bottom: 1rem;
+    }
+
+    .benefit-card .icon-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .benefit-card ul {
+      margin-top: 0.8rem;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .benefit-card li {
+      font-size: 0.85rem;
+      color: #334155;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .benefit-card li::before {
+      content: "✓";
+      color: #10b981;
+      font-weight: 800;
+    }
+
+    .benefit-action-row {
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .benefit-action-row a {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    .benefit-action-row a:hover {
+      text-decoration: underline;
+    }
+
+    /* 다음 신청 행동 가이드 박스 */
+    .action-guide-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .action-guide-box h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .guide-step-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .guide-step-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .guide-step-item p {
+      font-size: 0.83rem;
+      color: #64748b;
+    }
+
+    /* 탭 컨트롤러 */
+    .tab-bar {
+      display: flex;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: 12px;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      padding: 8px 16px;
+      border: none;
+      background: transparent;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .tab-btn.active {
+      background: white;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* 주요 업무 탭 내용 그리드 */
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .mission-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .mission-card:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-md);
+    }
+
+    .badge-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+
+    .tag-blue { background: #e0f2fe; color: #0369a1; }
+    .tag-red { background: #ffe4e6; color: #be123c; }
+    .tag-amber { background: #fef3c7; color: #b45309; }
+    .tag-teal { background: #ccfbf1; color: #0f766e; }
+
+    .mission-card h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: var(--text-main);
+    }
+
+    .mission-card ul {
+      list-style-type: none;
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .mission-card li {
+      font-size: 0.9rem;
+      color: #475569;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .mission-card li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    /* 최신 뉴스 및 정책 섹션 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: #94a3b8;
+    }
+
+    .news-body {
+      padding: 1.6rem;
+    }
+
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .news-agency {
+      color: var(--primary-light);
+      background: #eff6ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .news-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.45;
+      margin-bottom: 0.8rem;
+    }
+
+    .news-card p {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    .news-footer {
+      padding: 1rem 1.6rem;
+      border-top: 1px solid #f1f5f9;
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .news-footer svg {
+      transition: transform 0.2s ease;
+    }
+
+    .news-card:hover .news-footer svg {
+      transform: translateX(4px);
+    }
+
+    /* 자주 묻는 질문 (FAQ 아코디언) */
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.active {
+      border-color: #93c5fd;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.2rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding: 0 1.5rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding: 0 1.5rem 1.2rem;
+    }
+
+    /* 푸터 */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 3.5rem 1.5rem 2rem;
+      border-top: 1px solid #334155;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .survey-banner {
+        padding: 1.5rem;
+      }
+      .survey-body {
+        padding: 1.2rem;
+      }
+    }
+
+    .footer-info h4 {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links h5 {
+      color: white;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid #1e293b;
+      font-size: 0.82rem;
+      text-align: center;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 네비게이션 -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-logo-mark">보훈</div>
+        <div class="brand-title">
+          <h1>대한민국 국가보훈부</h1>
+          <p>Ministry of Patriots and Veterans Affairs</p>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" class="active">부처소개</a></li>
+        <li><a href="#check-survey" class="nav-btn-highlight">✨ 맞춤 지원 진단</a></li>
+        <li><a href="#missions">주요업무</a></li>
+        <li><a href="#news">최신 동향·뉴스</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 히어로 배너 -->
+  <section class="hero" id="about">
+    <div class="hero-badge">
+      <span>🇰🇷 국가를 위한 헌신을 잊지 않고 보답하는 나라</span>
+    </div>
+    <h2>"끝까지 기억하고 끝까지 책임지는<br>일류보훈 대한민국"</h2>
+    <p>
+      2023년 6월, 국가보훈처에서 <strong>국가보훈부(Ministry)</strong>로 공식 승격되었습니다.<br>
+      독립·호국·민주의 숭고한 정신을 계승하고, 모든 국민과 보훈가족의 곁을 든든하게 지켜드립니다.
+    </p>
+    <div class="hero-btn-group">
+      <a href="#check-survey" class="btn btn-survey">
+        🔍 나는 어떤 도움을 받을 수 있을까? (진단하기)
+      </a>
+      <a href="#missions" class="btn btn-primary">
+        주요 보훈 정책 알아보기
+      </a>
+      <a href="https://www.mpva.go.kr" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        공식 누리집 ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- 메인 본문 -->
+  <main>
+    <!-- 상단 핵심 4대 가치 카드 -->
+    <div class="highlight-grid">
+      <div class="highlight-card">
+        <div>
+          <div class="icon icon-blue">🛡️</div>
+          <h3>국가유공자 예우 및 보상</h3>
+          <p>보상금·수당 지원과 국가유공자 등록심사를 통해 희생과 헌신에 걸맞은 합당한 예우를 실현합니다.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div>
+          <div class="icon icon-red">🏥</div>
+          <h3>보훈 의료 및 맞춤 복지</h3>
+          <p>보훈병원, 전국 위탁병원 확대 및 맞춤형 요양·돌봄 지원으로 고령 유공자의 건강한 노후를 보장합니다.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div>
+          <div class="icon icon-gold">🎖️</div>
+          <h3>국립묘지 및 마지막 안장</h3>
+          <p>현충원·호국원 등 국립묘지 조성 및 안장 지원, 생애 마지막 가시는 길까지 국가가 책임집니다.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div>
+          <div class="icon icon-green">🤝</div>
+          <h3>일상 속 보훈문화 확산</h3>
+          <p>국민 모두가 참여하는 보훈기부, 청소년 체험, 민관 협력 프로젝트로 일상 속 보훈문화를 꽃피웁니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================
+         ✨ 신규: '나는 이 기관으로부터 어떤 도움을 받을 수 있을까?' 
+         맞춤형 체크리스트 & 자가진단 설문
+         ======================================================== -->
+    <section class="section-block" id="check-survey">
+      <div class="survey-container">
+        <div class="survey-banner">
+          <span class="survey-banner-tag">💡 국민 맞춤형 서비스 자가진단</span>
+          <h3>"나는 국가보훈부로부터 어떤 도움을 받을 수 있을까?"</h3>
+          <p>
+            국가유공자, 참전용사, 제대군인뿐만 아니라 일반 국민(청소년, 취업준비생, 일반 시민)까지!<br>
+            간단한 3단계 체크리스트를 통해 나에게 해당하는 국가보훈부의 맞춤 지원 혜택을 1분 만에 확인해 보세요.
+          </p>
+        </div>
+
+        <div class="survey-body">
+          <!-- 스텝 인디케이터 -->
+          <div class="step-indicator" id="stepIndicator">
+            <div class="step-item active" id="stepDot1">
+              <div class="step-num">1</div>
+              <div class="step-label">본인/가족 신분</div>
+            </div>
+            <div class="step-item" id="stepDot2">
+              <div class="step-num">2</div>
+              <div class="step-label">생애주기·상황</div>
+            </div>
+            <div class="step-item" id="stepDot3">
+              <div class="step-num">3</div>
+              <div class="step-label">가장 필요한 지원</div>
+            </div>
+          </div>
+
+          <!-- STEP 1: 신분 확인 -->
+          <div class="question-block active" id="step1">
+            <h4 class="q-title">Q1. 귀하 또는 가족(부모·조부모)의 해당 사항을 선택해 주세요.</h4>
+            <p class="q-desc">해당되는 신분 1가지를 선택해 주세요. 일반 국민도 다양한 보훈 혜택과 활동에 참여하실 수 있습니다.</p>
+            
+            <div class="options-grid">
+              <label class="option-card" onclick="selectRadio(this, 'status')">
+                <input type="radio" name="status" value="national_hero">
+                <div class="option-content">
+                  <h5>🎖️ 국가유공자 / 독립유공자 (또는 그 직계 유족)</h5>
+                  <p>독립운동, 6·25 및 월남 참전, 군 복무/경찰/소방 공무 중 부상(상이)을 입으신 분</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="selectRadio(this, 'status')">
+                <input type="radio" name="status" value="career_soldier">
+                <div class="option-content">
+                  <h5>🪖 5년 이상 중·장기 복무 제대군인 (또는 전역 예정자)</h5>
+                  <p>부사관·장교 등으로 5년(중기) 또는 10년 이상(장기) 성실 복무 후 사회 진출을 준비하는 분</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="selectRadio(this, 'status')">
+                <input type="radio" name="status" value="young_citizen">
+                <div class="option-content">
+                  <h5>🎓 일반 국민: 청소년 / 대학생 / 청년층</h5>
+                  <p>보훈 관련 장학금, 역사 탐방 캠페인, 공공기관 취업 가점 및 자원봉사에 관심 있는 청년</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="selectRadio(this, 'status')">
+                <input type="radio" name="status" value="general_citizen">
+                <div class="option-content">
+                  <h5>🇰🇷 일반 국민: 성인 시민 / 기업 / 시니어</h5>
+                  <p>일상 속 기부 펀딩 참여, 국립묘지 참배, 보훈 행사 및 역사 문화 콘텐츠에 참여하고자 하는 시민</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="survey-actions">
+              <div></div>
+              <button class="btn btn-survey-next" onclick="goToStep(2)">다음 질문으로 →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: 생애주기 및 세부 상황 -->
+          <div class="question-block" id="step2">
+            <h4 class="q-title">Q2. 현재 귀하 또는 가족이 처한 가장 중요한 생애 단계는 무엇인가요?</h4>
+            <p class="q-desc">현재 집중적인 도움이 필요한 시기를 선택해 주세요.</p>
+
+            <div class="options-grid">
+              <label class="option-card" onclick="selectRadio(this, 'stage')">
+                <input type="radio" name="stage" value="senior_care">
+                <div class="option-content">
+                  <h5>👵 노후 생활 안정 & 돌봄/치료가 필요한 시기</h5>
+                  <p>고령으로 만성질환 진료, 치매·거동 불편으로 인한 재가 간병, 요양 시설 입소가 필요한 상황</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="selectRadio(this, 'stage')">
+                <input type="radio" name="stage" value="job_edu">
+                <div class="option-content">
+                  <h5>💼 전역 후 사회 적응 & 취업·창업·교육 준비기</h5>
+                  <p>자격증 취득 지원, 직업훈련 바우처, 취업 가산점, 창업 컨설팅 또는 전직지원금이 필요한 상황</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="selectRadio(this, 'stage')">
+                <input type="radio" name="stage" value="memorial">
+                <div class="option-content">
+                  <h5>🕊️ 생애 마지막 예우 & 국립묘지 안장 준비</h5>
+                  <p>임종 또는 사후 국립묘지(현충원/호국원) 안장 절차, 장례 의전 및 화장시설 감면이 궁금한 상황</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="selectRadio(this, 'stage')">
+                <input type="radio" name="stage" value="culture_learning">
+                <div class="option-content">
+                  <h5>📚 역사 교육 체험 & 보훈 기부·봉사 참여 희망</h5>
+                  <p>아이들과 함께하는 보훈사적지 탐방, 독립기념관 관람, 국민 기부 펀딩에 동참하고 싶은 상황</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="survey-actions">
+              <button class="btn btn-survey-prev" onclick="goToStep(1)">← 이전 질문</button>
+              <button class="btn btn-survey-next" onclick="goToStep(3)">다음 질문으로 →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: 희망 지원 분야 체크리스트 (복수 선택 가능) -->
+          <div class="question-block" id="step3">
+            <h4 class="q-title">Q3. 어떤 형태의 지원을 가장 받고 싶으신가요? (체크리스트 - 복수 선택 가능)</h4>
+            <p class="q-desc">관심 있거나 필요한 지원 항목을 모두 체크해 주세요. 체크된 내용을 종합하여 맞춤 리포트를 제공합니다.</p>
+
+            <div class="options-grid">
+              <label class="option-card" onclick="toggleCheckbox(this)">
+                <input type="checkbox" name="interest" value="money">
+                <div class="option-content">
+                  <h5>💵 생활 안정 지원 (수당 / 보상금 / 대부)</h5>
+                  <p>매월 보훈보상금, 참전명예수당, 생활조정수당, 주택구입 장기저리 대부 혜택 등</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="toggleCheckbox(this)">
+                <input type="checkbox" name="interest" value="hospital">
+                <div class="option-content">
+                  <h5>🏥 의료비 감면 & 요양·방문 돌봄</h5>
+                  <p>보훈병원 국비·감면 진료, 전국 700여 개 위탁병원 진료비 감면, 보훈섬김이 가사 간병 서비스</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="toggleCheckbox(this)">
+                <input type="checkbox" name="interest" value="career">
+                <div class="option-content">
+                  <h5>🎯 일자리 매칭 & 교육비 지원 & 취업 가점</h5>
+                  <p>제대군인지원센터 1:1 진로 상담, 직업훈련 바우처, 취업지원 대상자 5~10% 가산점 제도</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="toggleCheckbox(this)">
+                <input type="checkbox" name="interest" value="cemetery">
+                <div class="option-content">
+                  <h5>🪦 국립묘지 안장 & 장례 의전 서비스</h5>
+                  <p>국립서울·대전현충원 및 권역별 호국원 안장, 영구용 태극기 증정, 공설화장시설 온라인 감면</p>
+                </div>
+              </label>
+
+              <label class="option-card" onclick="toggleCheckbox(this)">
+                <input type="checkbox" name="interest" value="culture_prog">
+                <div class="option-content">
+                  <h5>🎉 국민 참여 문화 행사 & 자원봉사 & 기부</h5>
+                  <p>보훈드림 기부 프로젝트, 서해수호의 날·현충일 기념 챌린지, 독립기념관 체험 해설 프로그램</p>
+                </div>
+              </label>
+            </div>
+
+            <div class="survey-actions">
+              <button class="btn btn-survey-prev" onclick="goToStep(2)">← 이전 질문</button>
+              <button class="btn btn-survey" onclick="calculateSurveyResult()">
+                🎯 맞춤 지원 혜택 결과 확인하기
+              </button>
+            </div>
+          </div>
+
+          <!-- RESULT: 맞춤 진단 결과 리포트 화면 -->
+          <div class="survey-result" id="surveyResult">
+            <div class="result-summary-header">
+              <span class="result-badge" id="resBadge">진단 완료</span>
+              <h3 id="resTitle">귀하를 위한 국가보훈부 맞춤 지원 안내서</h3>
+              <p id="resDesc">선택하신 신분과 생애주기를 기반으로 귀하께서 받을 수 있는 국가보훈부의 핵심 혜택을 정리해 드립니다.</p>
+            </div>
+
+            <div class="benefit-cards-grid" id="resCardsGrid">
+              <!-- JS 동적 생성 카드 영역 -->
+            </div>
+
+            <!-- 신청 방법 가이드 박스 -->
+            <div class="action-guide-box">
+              <h4>📋 지금 바로 혜택을 받는 3단계 신청 가이드</h4>
+              <div class="guide-steps">
+                <div class="guide-step-item">
+                  <strong>STEP 1. 자격 확인 & 상담</strong>
+                  <p>국가보훈부 종합상담센터 <strong>1577-0606</strong> 전화 또는 관할 보훈(지)청 방문 상담</p>
+                </div>
+                <div class="guide-step-item">
+                  <strong>STEP 2. 온라인 또는 방문 신청</strong>
+                  <p>'정부24' 또는 국가보훈부 e-보훈 포털을 통해 필요 구비서류 제출</p>
+                </div>
+                <div class="guide-step-item">
+                  <strong>STEP 3. 심사 및 즉시 수혜</strong>
+                  <p>보훈심사위원회 심사 후 유공자증 발급, 보훈병원 등록, 수당 통장 자동 지급</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+              <button class="btn btn-primary" onclick="restartSurvey()" style="background: #e2e8f0; color: #334155;">
+                🔄 설문 다시 진행하기
+              </button>
+              <a href="https://www.mpva.go.kr" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: var(--primary); color: white; margin-left: 10px;">
+                국가보훈부 온라인 민원신청 바로가기 ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 주요 업무 섹션 -->
+    <section class="section-block" id="missions">
+      <div class="section-header">
+        <div class="title-group">
+          <h2>📌 국가보훈부 주요 업무 및 핵심 정책</h2>
+          <p>국민과 보훈가족의 체감도를 높이기 위해 4대 핵심 분야로 나누어 추진하고 있습니다.</p>
+        </div>
+        <div class="tab-bar">
+          <button class="tab-btn active" onclick="filterMissions('all')">전체보기</button>
+          <button class="tab-btn" onclick="filterMissions('honor')">예우·보상</button>
+          <button class="tab-btn" onclick="filterMissions('medical')">의료·복지</button>
+          <button class="tab-btn" onclick="filterMissions('culture')">문화·제대군인</button>
+        </div>
+      </div>
+
+      <div class="mission-grid" id="missionGrid">
+        <!-- 카드 1 -->
+        <div class="mission-card" data-category="honor">
+          <span class="badge-tag tag-blue">보상 및 예우</span>
+          <h4>보훈심사 디지털 혁신 & 보상금 단계적 현실화</h4>
+          <p>보훈 대상자 등록 요건 심사에 AI(인공지능)를 도입하여 대기 시간을 획기적으로 줄이고, 독립유공자 유족 및 참전유공자 보상금을 매년 현실화하고 있습니다.</p>
+          <ul>
+            <li>보훈심사 신속 처리 체계 구축</li>
+            <li>참전명예수당 및 무공영예수당 현실화</li>
+            <li>미서훈 독립운동가 발굴 및 직권 조사 확대</li>
+          </ul>
+        </div>
+
+        <!-- 카드 2 -->
+        <div class="mission-card" data-category="medical">
+          <span class="badge-tag tag-red">의료 및 재활</span>
+          <h4>전국 700여 개 위탁병원 확대 & 보훈병원 고도화</h4>
+          <p>거주지 가까운 곳에서 양질의 진료를 받으실 수 있도록 전국 위탁병원을 지속 발굴하고 중앙보훈병원 등 전문 진료 역량을 확충합니다.</p>
+          <ul>
+            <li>시·군·구 단위 위탁의료기관 700개 이상 확대</li>
+            <li>재활센터 및 전문 요양시설 인프라 증설</li>
+            <li>공설화장시설 온라인 원스톱 감면 서비스 지원</li>
+          </ul>
+        </div>
+
+        <!-- 카드 3 -->
+        <div class="mission-card" data-category="culture">
+          <span class="badge-tag tag-amber">보훈 문화</span>
+          <h4>‘일상 속 살아있는 보훈’ 문화 조성</h4>
+          <p>단순한 추모 행사를 넘어 젊은 세대와 기업, 시민이 함께하는 문화 축제와 일상 속 기부·참여 캠페인을 추진합니다.</p>
+          <ul>
+            <li>국민 참여형 '모두의 보훈 드림' 프로젝트</li>
+            <li>대기업·백화점 등 민관협력 보훈 팝업 및 콘텐츠 개발</li>
+            <li>국가기념일(6·25, 현충일, 광복절 등) 품격 있는 거행</li>
+          </ul>
+        </div>
+
+        <!-- 카드 4 -->
+        <div class="mission-card" data-category="culture">
+          <span class="badge-tag tag-teal">제대군인 지원</span>
+          <h4>중·장기 복무 제대군인 사회정착 지원</h4>
+          <p>국토 수호에 젊음을 바친 군인들이 전역 후 원활하게 사회에 복귀할 수 있도록 일자리 매칭, 직업교육훈련 바우처, 전직지원금을 제공합니다.</p>
+          <ul>
+            <li>전국 제대군인지원센터 10개소 맞춤 상담</li>
+            <li>청년 제대군인 공공·민간 취업 연계 지원</li>
+            <li>전직지원금 단가 인상 및 지급 기간 연장</li>
+          </ul>
+        </div>
+
+        <!-- 카드 5 -->
+        <div class="mission-card" data-category="honor">
+          <span class="badge-tag tag-blue">선양 및 묘지</span>
+          <h4>국립묘지 확충 및 국가유공자 품격 안장</h4>
+          <p>국립서울현충원의 보훈부 이관 관리와 함께 연천·영천·임실 등 전국 권역별 호국원을 증축하여 품격 있는 마지막 길을 모십니다.</p>
+          <ul>
+            <li>국립서울현충원 국가보훈부 일원화 관리</li>
+            <li>국립묘지 외 묘역 안장자 지원 및 사각지대 해소</li>
+            <li>국가유공자 장례의전 서비스 및 태극기 관보 지원</li>
+          </ul>
+        </div>
+
+        <!-- 카드 6 -->
+        <div class="mission-card" data-category="medical">
+          <span class="badge-tag tag-red">보훈 가족 복지</span>
+          <h4>고령 보훈가족 맞춤형 재가복지 (보훈섬김이)</h4>
+          <p>거동이 불편하거나 독거 보훈가족을 위해 보훈섬김이가 직접 가정을 방문하여 가사, 건강, 정서적 케어를 제공합니다.</p>
+          <ul>
+            <li>독거·고령 유공자 안부 살핌 및 건강 체크</li>
+            <li>보훈 요양원 치매전담실 등 전문 복지 시설 운영</li>
+            <li>찾아가는 이동보훈복지 ‘보훈클리닉’ 운영</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 최신 정책 동향 및 뉴스 기사 섹션 -->
+    <section class="section-block" id="news">
+      <div class="section-header">
+        <div class="title-group">
+          <h2>📰 국가보훈부 최신 동향 및 주요 뉴스</h2>
+          <p>실제 보도된 국가보훈부의 최신 정책 현안과 보도자료를 확인하세요. (클릭 시 원문으로 연결)</p>
+        </div>
+        <a href="https://www.korea.kr/briefing/pressReleaseList.do" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="color: var(--primary); border-color: var(--border);">
+          정부 보도자료 더보기 ↗
+        </a>
+      </div>
+
+      <div class="news-grid">
+        <!-- 뉴스 1 -->
+        <a href="https://www.mpva.go.kr" target="_blank" rel="noopener noreferrer" class="news-card">
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-agency">국가보훈부 보도</span>
+              <span>2026.10 최신</span>
+            </div>
+            <h4>국가유공자 공설화장시설 사용료 면제 증빙서류 온라인 간편 발급 개시</h4>
+            <p>보건복지부 e하늘장사정보시스템 및 정부 온라인 포털과의 연계를 통해 복잡한 증빙서류 지참 없이 비대면 원스톱으로 화장장 사용료를 면제받을 수 있도록 서비스가 전면 개선되었습니다.</p>
+          </div>
+          <div class="news-footer">
+            <span>공식 보도자료 보기</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- 뉴스 2 -->
+        <a href="https://www.korea.kr" target="_blank" rel="noopener noreferrer" class="news-card">
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-agency">대한민국 정책브리핑</span>
+              <span>2026 정책과제</span>
+            </div>
+            <h4>"모두의 보훈, 일상의 보훈"… 보훈심사 AI 도입 및 사각지대 1,740명 선제 발굴</h4>
+            <p>보훈 행정이 '신청주의'에서 '찾아가는 행정'으로 전환됩니다. 제도를 몰라 지원을 받지 못하던 국립묘지 외 안장 유가족을 대거 발굴 지원하고 인공지능 보훈심사 시스템을 구축합니다.</p>
+          </div>
+          <div class="news-footer">
+            <span>정책브리핑 기사 보기</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- 뉴스 3 -->
+        <a href="https://www.korea.kr" target="_blank" rel="noopener noreferrer" class="news-card">
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-agency">문화·민관협력</span>
+              <span>2026 보훈문화</span>
+            </div>
+            <h4>국가보훈부-롯데백화점, ‘일상 속 보훈문화 확산’ 업무협약(MOU) 체결</h4>
+            <p>청년층과 시민들이 일상생활 속에서 보훈의 숭고한 가치를 자연스럽게 경험할 수 있도록 민관 공동 팝업스토어, 기부 캠페인, 보훈문화 굿즈 프로젝트를 전개합니다.</p>
+          </div>
+          <div class="news-footer">
+            <span>협약 소식 확인하기</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- 뉴스 4 -->
+        <a href="https://www.mpva.go.kr" target="_blank" rel="noopener noreferrer" class="news-card">
+          <div class="news-body">
+            <div class="news-meta">
+              <span class="news-agency">입법·정책</span>
+              <span>하반기 역점</span>
+            </div>
+            <h4>미서훈 독립운동가 발굴 대폭 확대 및 독립유공자 후손 예우 강화</h4>
+            <p>기록이 미비해 인정받지 못했던 여성 및 학생 독립운동가 수백 명을 추가 발굴 포상하고, 독립유공자 후손에 대한 장학 지원 및 생활안정 자금 지원을 확대합니다.</p>
+          </div>
+          <div class="news-footer">
+            <span>보훈부 소식지 보기</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- 자주 묻는 질문 (FAQ) -->
+    <section class="section-block" id="faq">
+      <div class="section-header">
+        <div class="title-group">
+          <h2>❓ 자주 묻는 질문 (FAQ)</h2>
+          <p>국민들이 국가보훈부에 가장 많이 궁금해하는 질문들을 모았습니다.</p>
+        </div>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Q1. 국가보훈처와 국가보훈부는 어떤 차이가 있나요?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            2023년 6월 정부조직법 개정으로 국가보훈처가 '부(Ministry)'로 승격되었습니다. 장관이 국무위원으로서 국무회의 심의·의결권을 행사하게 되며 부령(부칙) 제정권을 갖게 되어 국가유공자 예우 정책의 위상이 격상되고 범부처 차원의 정책 추진력이 대폭 강화되었습니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Q2. 국가유공자 등록 신청은 어떻게 하나요?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            주소지 관할 보훈(지)청 보훈과를 직접 방문하시거나 '정부24' 누리집을 통해 온라인으로 신청하실 수 있습니다. 국가유공자 등 등록신청서, 가족관계기록사항증명서, 병적증명서 또는 복무확인서 등을 구비하여 접수하면 보훈심사위원회의 요건 심사 및 상이등급 신체검사를 거쳐 결정됩니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Q3. 국가유공자 국립묘지 안장 신청 절차는 어떻게 되나요?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            국립묘지안장신청시스템(ncms.korea.kr)을 통해 온라인으로 신청하거나 관할 보훈관서로 신청합니다. 유공자 본인 사망 시 유족이 장례 기간 중 즉시 안장 대상 여부를 확인받을 수 있도록 24시간 패스트트랙 안장 심사 제도가 상시 가동되고 있습니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>Q4. 일반 국민도 참여할 수 있는 보훈 활동이 있나요?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            네! 국가보훈부에서는 국민 기부 포털 '모두의 보훈 드림', 서해수호의 날·현충일 걷기대회 및 보훈문화제, 보훈병원·요양원 자원봉사, 독립기념관 및 호국원 해설 봉사 등 다양한 국민 참여형 프로그램을 연중 상시 운영하고 있습니다.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h4>대한민국 국가보훈부 (MPVA)</h4>
+        <p style="font-size: 0.9rem; margin-bottom: 0.8rem;">
+          세종특별자치시 도움4로 9 (어진동, 정부세종청사 9동)<br>
+          보훈상담 대표전화: <strong>1577-0606</strong> (평일 09:00 ~ 18:00)
+        </p>
+        <p style="font-size: 0.85rem; color: #64748b;">
+          본 웹 애플리케이션은 국가보훈부의 핵심 정책, 부처 소개, 최신 뉴스 동향을 국민이 쉽게 열람할 수 있도록 독립 실행(HTML/CSS/JS) 파일로 제작되었습니다.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h5>관련 정부 포털</h5>
+        <ul>
+          <li><a href="https://www.mpva.go.kr" target="_blank" rel="noopener noreferrer">국가보훈부 공식 누리집 ↗</a></li>
+          <li><a href="https://www.korea.kr" target="_blank" rel="noopener noreferrer">대한민국 정책브리핑 ↗</a></li>
+          <li><a href="https://ncms.korea.kr" target="_blank" rel="noopener noreferrer">국립묘지 안장관리시스템 ↗</a></li>
+          <li><a href="https://www.vnet.go.kr" target="_blank" rel="noopener noreferrer">제대군인지원센터 (Vnet) ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>직속 산하기관</h5>
+        <ul>
+          <li><a href="https://www.bohun.or.kr" target="_blank" rel="noopener noreferrer">한국보훈복지의료공단 ↗</a></li>
+          <li><a href="https://i815.or.kr" target="_blank" rel="noopener noreferrer">독립기념관 ↗</a></li>
+          <li><a href="https://www.snmb.mil.kr" target="_blank" rel="noopener noreferrer">국립대전현충원 ↗</a></li>
+          <li><a href="https://www.snmc.go.kr" target="_blank" rel="noopener noreferrer">국립서울현충원 ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      Copyright &copy; 대한민국 국가보훈부 정책 안내 포털. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- 인터랙티브 스크립트 -->
+  <script>
+    // 1. 주요 업무 필터 기능
+    function filterMissions(cat) {
+      const cards = document.querySelectorAll('.mission-card');
+      const tabs = document.querySelectorAll('.tab-btn');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. FAQ 아코디언 토글
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      const indicator = btn.querySelector('span:last-child');
+
+      // 기존 열린 아코디언 닫기
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('active');
+        const icon = el.querySelector('.faq-question span:last-child');
+        if (icon) icon.textContent = '+';
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        indicator.textContent = '−';
+      }
+    }
+
+    // ========================================================
+    // 3. 맞춤 지원 체크리스트 & 설문 로직
+    // ========================================================
+    let currentStep = 1;
+
+    function selectRadio(cardElement, groupName) {
+      const radio = cardElement.querySelector(`input[name="${groupName}"]`);
+      if (radio) {
+        radio.checked = true;
+      }
+      const parentBlock = cardElement.closest('.options-grid');
+      parentBlock.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      cardElement.classList.add('selected');
+    }
+
+    function toggleCheckbox(cardElement) {
+      const cb = cardElement.querySelector('input[type="checkbox"]');
+      if (event.target !== cb) {
+        cb.checked = !cb.checked;
+      }
+      if (cb.checked) {
+        cardElement.classList.add('selected');
+      } else {
+        cardElement.classList.remove('selected');
+      }
+    }
+
+    function goToStep(stepNum) {
+      // 유효성 검사
+      if (stepNum === 2) {
+        const checkedStatus = document.querySelector('input[name="status"]:checked');
+        if (!checkedStatus) {
+          alert('귀하 또는 가족의 해당 사항을 선택해 주세요.');
+          return;
+        }
+      }
+      if (stepNum === 3) {
+        const checkedStage = document.querySelector('input[name="stage"]:checked');
+        if (!checkedStage) {
+          alert('현재 가장 중요한 생애 단계/상황을 선택해 주세요.');
+          return;
+        }
+      }
+
+      currentStep = stepNum;
+
+      // 블록 전환
+      document.querySelectorAll('.question-block').forEach(b => b.classList.remove('active'));
+      const targetBlock = document.getElementById(`step${stepNum}`);
+      if (targetBlock) targetBlock.classList.add('active');
+
+      // 스텝 인디케이터 갱신
+      for (let i = 1; i <= 3; i++) {
+        const dot = document.getElementById(`stepDot${i}`);
+        dot.classList.remove('active', 'completed');
+        if (i < stepNum) {
+          dot.classList.add('completed');
+        } else if (i === stepNum) {
+          dot.classList.add('active');
+        }
+      }
+
+      // 스크롤 상단으로 부드럽게 이동
+      document.getElementById('check-survey').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function calculateSurveyResult() {
+      const status = document.querySelector('input[name="status"]:checked')?.value;
+      const stage = document.querySelector('input[name="stage"]:checked')?.value;
+      const checkedInterests = Array.from(document.querySelectorAll('input[name="interest"]:checked')).map(el => el.value);
+
+      if (checkedInterests.length === 0) {
+        alert('희망하는 지원 분야를 최소 1개 이상 체크해 주세요.');
+        return;
+      }
+
+      // 3단계 숨기고 결과창 표시
+      document.querySelectorAll('.question-block').forEach(b => b.classList.remove('active'));
+      const resultView = document.getElementById('surveyResult');
+      resultView.classList.add('active');
+
+      // 스텝 인디케이터 전체 완료 표시
+      for (let i = 1; i <= 3; i++) {
+        const dot = document.getElementById(`stepDot${i}`);
+        dot.classList.remove('active');
+        dot.classList.add('completed');
+      }
+
+      // 혜택 데이터 카드 조합 생성
+      const resCardsGrid = document.getElementById('resCardsGrid');
+      resCardsGrid.innerHTML = '';
+
+      const resBadge = document.getElementById('resBadge');
+      const resTitle = document.getElementById('resTitle');
+      const resDesc = document.getElementById('resDesc');
+
+      let cardsData = [];
+
+      if (status === 'national_hero') {
+        resBadge.className = 'result-badge badge-vet';
+        resBadge.textContent = '국가유공자 및 보훈가족 맞춤 결과';
+        resTitle.textContent = '국가를 위한 헌신에 보답하는 전 주기 맞춤 예우 패키지';
+        resDesc.textContent = '귀하께서는 법률이 정한 국가유공자 예우 대상으로서, 매월 보상금 지급부터 의료비 국비 지원, 국립묘지 안장까지 영예로운 삶을 지원받으실 수 있습니다.';
+
+        cardsData.push({
+          icon: '🛡️',
+          tag: '보상 및 생활안정',
+          title: '매월 보훈보상금 & 참전명예수당',
+          desc: '상이등급 및 유공 유형에 따라 매월 정기 보훈급여금을 지급하며, 고령 참전유공자에게는 무공·참전수당이 함께 지급됩니다.',
+          points: [
+            '매월 15일 본인 통장으로 보훈급여금 입금',
+            '생활 형편에 따른 생활조정수당 및 명절 위로금 별도 지원',
+            '주택 구입 및 전세자금 연 1~2%대 장기 저리 대부'
+          ],
+          linkText: '보상금 세부 기준 보기',
+          url: 'https://www.mpva.go.kr'
+        });
+
+        cardsData.push({
+          icon: '🏥',
+          tag: '의료 및 돌봄',
+          title: '보훈병원 국비(무료) 및 위탁병원 90% 감면',
+          desc: '전국 6개 보훈병원과 집 가까운 700여 개 시·군·구 지정 위탁병원에서 진료비를 전액 국비 또는 대폭 감면받으실 수 있습니다.',
+          points: [
+            '상이 유공자: 보훈병원 본인부담금 100% 면제',
+            '참전유공자: 보훈병원 90% 감면, 75세 이상 위탁병원 감면',
+            '거동 불편 시 \'보훈섬김이\'가 주 1~2회 방문해 가사·돌봄 케어'
+          ],
+          linkText: '내 주변 위탁병원 검색',
+          url: 'https://www.bohun.or.kr'
+        });
+
+        cardsData.push({
+          icon: '🎖️',
+          tag: '마지막 예우',
+          title: '국립묘지 안장 & 장례의전 & 화장장 감면',
+          desc: '생애 마지막 가시는 길, 국립서울/대전현충원 또는 권역별 국립호국원에 안장되며 대통령 명의 근조화환과 영구용 태극기가 헌정됩니다.',
+          points: [
+            '24시간 원스톱 국립묘지 안장 심사 패스트트랙 운영',
+            '전국 공설화장시설 사용료 온라인 무료 감면 연계',
+            '생애 마지막 국립묘지 영구 안장 및 추모 의전'
+          ],
+          linkText: '국립묘지안장신청 시스템',
+          url: 'https://ncms.korea.kr'
+        });
+
+        if (checkedInterests.includes('career')) {
+          cardsData.push({
+            icon: '💼',
+            tag: '자녀·유족 취업지원',
+            title: '국가기관·대기업 의무채용 및 5~10% 가산점',
+            desc: '국가유공자 본인뿐만 아니라 배우자 및 자녀의 안정적인 사회 정착을 위해 채용 시 법정 가산점과 학자금 전액 면제를 지원합니다.',
+            points: [
+              '공무원·공기업·대기업 채용시험 만점의 5~10% 가산점',
+              '중·고등학교 및 대학교 수업료 전액 면제 (보훈장학금)',
+              '보훈특별고용 알선 및 취업지원'
+            ],
+            linkText: '취업지원 혜택 안내',
+            url: 'https://www.mpva.go.kr'
+          });
+        }
+      } else if (status === 'career_soldier') {
+        resBadge.className = 'result-badge badge-vet';
+        resBadge.textContent = '중·장기 제대군인 맞춤 결과';
+        resTitle.textContent = '인생 2막을 여는 제대군인 든든 일자리 & 정착 지원 패키지';
+        resDesc.textContent = '5년 이상 청춘을 바쳐 국토를 지킨 제대군인을 위해 국가보훈부 제대군인지원센터가 전직지원금부터 맞춤 재취업까지 동행합니다.';
+
+        cardsData.push({
+          icon: '🎯',
+          tag: '전직 및 일자리',
+          title: '제대군인지원센터 1:1 맞춤 일자리 매칭',
+          desc: '전국 10개 권역 센터에서 군 경력을 살린 군무원, 방산기업, 보안, 안전 관리자 등 민간 우수 일자리를 전담 상담사가 추천해 드립니다.',
+          points: [
+            '전국 10개소 제대군인지원센터(Vnet) 1:1 전담 직업상담관 배치',
+            '기업 맞춤형 채용설명회 및 취업박람회 우선 참가',
+            '공공기관 및 방위산업체 채용 추천서 발급'
+          ],
+          linkText: 'Vnet 제대군인지원센터 바로가기',
+          url: 'https://www.vnet.go.kr'
+        });
+
+        cardsData.push({
+          icon: '💳',
+          tag: '생계 및 교육지원',
+          title: '전직지원금 매월 지급 & 직업교육훈련 바우처',
+          desc: '사회 복귀 준비 기간 동안 생계 불안을 덜어드리기 위해 월 전직지원금을 지급하고 자격증 취득 교육비를 국비로 지원합니다.',
+          points: [
+            '10년 이상 장기복무 비취업자 대상 구직활동 시 전직지원금 매월 지급',
+            '드론, 지게차, 소방안전, 전기기사 등 직업훈련비 최대 바우처 지원',
+            '대학 위탁교육 및 사이버 교육과정 전액 무료'
+          ],
+          linkText: '전직지원금 신청 가이드',
+          url: 'https://www.vnet.go.kr'
+        });
+
+        cardsData.push({
+          icon: '🏥',
+          tag: '의료 및 금융혜택',
+          title: '보훈병원 50~60% 진료비 감면 & 저리 대부',
+          desc: '제대군인의 건강 증진을 위해 전국 6대 보훈병원 진료비 50~60% 감면 혜택과 생활안정자금 융자를 제공합니다.',
+          points: [
+            '보훈병원 외래 및 입원 시 본인부담금 대폭 감면',
+            '주택 구입, 전세자금, 사업 창업자금 장기저리 대부',
+            '군 복무 중 발병 질환에 대한 국가유공자/보훈보상대상자 등록 심사 연계'
+          ],
+          linkText: '제대군인 의료/금융 안내',
+          url: 'https://www.mpva.go.kr'
+        });
+      } else if (status === 'young_citizen') {
+        resBadge.className = 'result-badge badge-general';
+        resBadge.textContent = '청년·학생 국민 맞춤 결과';
+        resTitle.textContent = '청년의 미래를 응원하고 보훈의 가치를 잇는 청년 지원 프로젝트';
+        resDesc.textContent = '국가보훈부는 일반 청년과 학생들에게도 다양한 역사 체험, 서포터즈, 취업 역량 강화 및 장학 혜택의 문을 열어두고 있습니다.';
+
+        cardsData.push({
+          icon: '🎓',
+          tag: '청년 장학 및 취업',
+          title: '보훈 장학금 & 공공기관 청년인턴 기회',
+          desc: '국가를 위해 헌신한 가문의 청년들을 위한 장학금 지원은 물론, 일반 청년 대상 보훈부 산하기관 인턴십과 취업 멘토링을 운영합니다.',
+          points: [
+            '보훈가족 대학생 보훈장학금 및 학자금 대출 이자 지원',
+            '독립기념관, 보훈복지의료공단 등 산하기관 청년인턴 채용',
+            '청년 제대군인 공공·민간 일자리 우선 추천'
+          ],
+          linkText: '청년 보훈 혜택 상세',
+          url: 'https://www.mpva.go.kr'
+        });
+
+        cardsData.push({
+          icon: '✈️',
+          tag: '역사 문화 체험',
+          title: '국내외 보훈사적지 탐방 & 청년 보훈기자단',
+          desc: '백두산, 중국 동북 3성, 상하이 등 국외 독립운동 사적지 및 DMZ 호국 평화 로드 탐방 비용을 전액 국비로 지원받을 수 있습니다.',
+          points: [
+            '대학생 국내외 독립·호국 사적지 탐방단 (참가비 전액 국비 지원)',
+            '국가보훈부 공식 청년기자단 및 디지털 크리에이터 활동 (활동비 지원)',
+            '청년 보훈문화 아이디어 공모전 및 시상'
+          ],
+          linkText: '보훈문화 탐방 신청',
+          url: 'https://www.mpva.go.kr'
+        });
+
+        cardsData.push({
+          icon: '🎁',
+          tag: '청년 팝업 & 민관협력',
+          title: '일상 속 보훈 팝업스토어 & 청년 챌린지',
+          desc: '롯데백화점 등 민간 기업과 협력한 일상 보훈 팝업, 굿즈 증정 이벤트, 서해수호의 날 걷기대회 챌린지에 직접 참여해 보세요.',
+          points: [
+            'MZ세대 타깃 보훈 굿즈(키링, 티셔츠, 굿즈) 협업 캠페인',
+            '러닝 크루와 함께하는 현충일 기부 런(Run) 프로젝트',
+            '모바일 간편 보훈 퀴즈 및 봉사 마일리지 적립'
+          ],
+          linkText: '보훈 행사 일정 확인',
+          url: 'https://www.korea.kr'
+        });
+      } else {
+        // general_citizen
+        resBadge.className = 'result-badge badge-general';
+        resBadge.textContent = '일반 시민 맞춤 결과';
+        resTitle.textContent = '국민 모두가 함께 누리고 기억하는 일상의 보훈 동행';
+        resDesc.textContent = '보훈은 특별한 사람만의 것이 아닙니다. 일반 국민 누구나 일상 속에서 보훈에 참여하고 혜택과 문화를 나눌 수 있습니다.';
+
+        cardsData.push({
+          icon: '🤝',
+          tag: '국민 참여 프로젝트',
+          title: '국민 기부 플랫폼 \'모두의 보훈 드림\'',
+          desc: '소액이라도 국가유공자 어르신들의 주거환경 개선, 영웅의 제복 기부, 식사 대접에 직접 지정 기부하고 세제 혜택을 받을 수 있습니다.',
+          points: [
+            '1,000원부터 가능한 투명한 국민 참여형 보훈 펀딩',
+            '고령 독거 참전유공자 주거 환경 개선 및 반찬 지원 후원',
+            '연말정산 100% 소득공제(법정기부금) 영수증 즉시 발급'
+          ],
+          linkText: '모두의 보훈 드림 플랫폼',
+          url: 'https://www.mpva.go.kr'
+        });
+
+        cardsData.push({
+          icon: '🏛️',
+          tag: '가족 문화 여가',
+          title: '국립묘지·기념관 힐링 공원화 & 무료 관람',
+          desc: '국립서울현충원, 국립대전현충원, 독립기념관은 역사 체험뿐 아니라 사계절 산책로, 벚꽃길, 야외 음악회가 열리는 국민 힐링 공간입니다.',
+          points: [
+            '국립서울현충원 시민 친화적 열린 문화 공간(음악회, 산책로) 개방',
+            '독립기념관 캠핑장 및 가족 체험 야외 학습 프로그램',
+            '전국 보훈기념관 모바일 스탬프 투어 및 기념품 증정'
+          ],
+          linkText: '현충원 힐링 프로그램 보기',
+          url: 'https://www.snmc.go.kr'
+        });
+
+        cardsData.push({
+          icon: '❤️',
+          tag: '나눔과 자원봉사',
+          title: '보훈병원 자원봉사 & 명예 해설사 참여',
+          desc: '보훈병원, 보훈요양원에서 어르신들을 위한 말벗, 식사 보조, 국립묘지 묘역 정화 및 시민 해설 봉사에 참여해 보훈 훈장을 함께 나눠보세요.',
+          points: [
+            '1365 자원봉사포털 연계 공식 봉사활동 시간 인정',
+            '국립묘지 및 독립기념관 시민 해설사 양성 과정 수료 기회',
+            '우수 자원봉사자 보훈부 장관 표창 및 포상'
+          ],
+          linkText: '보훈 봉사활동 알아보기',
+          url: 'https://www.bohun.or.kr'
+        });
+      }
+
+      // 카드 렌더링
+      cardsData.forEach(item => {
+        const cardEl = document.createElement('div');
+        cardEl.className = 'benefit-card';
+        cardEl.innerHTML = `
+          <div class="card-top">
+            <div class="icon-label">
+              <span>${item.icon}</span>
+              <span>${item.tag}</span>
+            </div>
+            <h4>${item.title}</h4>
+            <p>${item.desc}</p>
+            <ul>
+              ${item.points.map(pt => `<li>${pt}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="benefit-action-row">
+            <span style="font-size: 0.8rem; color: #94a3b8;">신청 가능</span>
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer">${item.linkText} ↗</a>
+          </div>
+        `;
+        resCardsGrid.appendChild(cardEl);
+      });
+
+      // 결과 화면으로 부드럽게 스크롤
+      resultView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function restartSurvey() {
+      // 설문 초기화
+      document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+      document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = false);
+      document.querySelectorAll('.option-card').forEach(card => card.classList.remove('selected'));
+
+      document.getElementById('surveyResult').classList.remove('active');
+      goToStep(1);
+    }
+  </script>
+</body>
+</html>
